@@ -1,0 +1,25 @@
+@use "../abstracts/functions" as *;
+body {
+  font-size: rem(18);
+  font-family: var(--ff-body);
+}
+
+.card-body {
+  .card-title {
+    font-weight: var(--fw-bold);
+    font-size: rem(22);
+  }
+  .card-text {
+    color: var(--soft-blue);
+    font-weight: var(--fw-light);
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+  .card-data {
+    .data-eth {
+      color: var(--cyan);
+      font-weight: var(--fw-bold);
+      font-size: rem(15);
+    }
+  }
+}

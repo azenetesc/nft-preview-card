@@ -1,0 +1,26 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-blue-bg);
+}
+
+hr {
+  margin: rem(16) auto;
+  border: none;
+  height: 1px;
+  background-color: var(--dark-blue-line);
+}
+
+.container {
+  @include flex-row(center, center);
+  height: 100vh;
+}

@@ -1,0 +1,129 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.card {
+  background-color: var(--dark-blue-card-bg);
+  border-radius: 15px;
+  padding: rem(24);
+  width: rem(327);
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.111);
+}
+
+.card-img-container {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  @include flex-row(center, center);
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in;
+  }
+  &:hover::before {
+    background-color: rgba(0, 255, 255, 0.234);
+  }
+  &:hover .card-img-icon {
+    opacity: 1;
+  }
+  .card-img-icon {
+    position: absolute;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+  }
+  .card-img-nft {
+    width: 100%;
+  }
+}
+
+.card-body {
+  margin-top: rem(24);
+  .card-title {
+    color: var(--white);
+    margin-bottom: rem(15);
+    transition: all 0.3s ease-in;
+    &:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+  }
+  .card-data {
+    @include flex-row(space-between, center);
+    margin-top: rem(16);
+    .data-eth {
+      color: var(--cyan);
+      font-weight: var(--fw-bold);
+      font-size: rem(15);
+      @include flex-row(center, center);
+    }
+    .data-date {
+      @include flex-row(center, center);
+    }
+    .card-icon {
+      margin-right: rem(7);
+    }
+  }
+}
+
+.card-footer {
+  @include flex-row(left, center);
+  .card-user {
+    width: 12%;
+    border: 1px var(--white) solid;
+    border-radius: 50%;
+    margin-right: rem(16);
+  }
+  .profile {
+    color: var(--white);
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media screen and (min-width: 48em) {
+  hr {
+    margin: rem(22) auto rem(16);
+  }
+  .card {
+    width: rem(350);
+    .card-title {
+      margin-bottom: rem(18);
+    }
+    .card-text {
+      font-size: rem(18);
+      line-height: rem(25);
+    }
+    .card-data {
+      margin-top: rem(19);
+      .data-eth {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  .card-footer {
+    margin-bottom: rem(10);
+
+    .card-user {
+      width: 11%;
+    }
+    .card-text {
+      font-size: rem(16.4);
+    }
+  }
+}
