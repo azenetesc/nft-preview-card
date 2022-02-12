@@ -18,7 +18,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 <div align="center">
   <h3>My solution</h3><br>
-<img src="screenshot/desktop-design.png" width="45%" height="60%"/> <img src="screenshot/mobile-design.png" width="20%" height="20%" align="top"/>
+<img src="screenshot/desktop-design.png" width="60%" height="80%"/> <img src="screenshot/mobile-design.png" width="21%" align="top"/>
 </div>
 
 ### Links
