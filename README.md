@@ -24,7 +24,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 ### Links
 
 - Solution URL: [FrontEnd Mentor: My Solution](https://github.com/azenetesc/nft-preview-card)
-- Live Site URL: [GitHub Page: QR Card Component](https://azenetesc.github.io/nft-preview-card/)
+- Live Site URL: [GitHub Page: NFT Preview Card](https://azenetesc.github.io/nft-preview-card/)
 
 ## My process
 
