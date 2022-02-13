@@ -5,7 +5,7 @@
   background-color: var(--dark-blue-card-bg);
   border-radius: 15px;
   padding: rem(24);
-  width: rem(327);
+  max-width: rem(327);
   box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.111);
 }
 
@@ -13,43 +13,46 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  @include flex-row(center, center);
-  cursor: pointer;
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    transition: all 0.3s ease-in;
-  }
-  &:hover::before {
-    background-color: rgba(0, 255, 255, 0.234);
-  }
-  &:hover .card-img-icon {
-    opacity: 1;
-  }
-  .card-img-icon {
-    position: absolute;
-    transition: all 0.3s ease-in;
-    opacity: 0;
-  }
-  .card-img-nft {
-    width: 100%;
+
+  .card-link {
+    cursor: pointer;
+    @include flex-row(center, center);
+    &::before {
+      @include flex-row(center, center);
+      position: absolute;
+      content: url("../../images/icon-view.svg");
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 255, 255, 0.234);
+      transition: all 0.3s ease-in;
+      opacity: 0;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    .card-img-nft {
+      width: 100%;
+    }
   }
 }
 
+// LINKS DEL TEXTO
+
 .card-body {
   margin-top: rem(24);
-  .card-title {
+  .text-links {
+    text-decoration: none;
     color: var(--white);
-    margin-bottom: rem(15);
-    transition: all 0.3s ease-in;
+    transition: all 0.4s ease;
+    .card-title {
+      display: inline-block;
+      margin-bottom: rem(15);
+    }
     &:hover {
       color: var(--cyan);
-      cursor: pointer;
     }
   }
+
   .card-data {
     @include flex-row(space-between, center);
     margin-top: rem(16);
@@ -70,20 +73,14 @@
 
 .card-footer {
   @include flex-row(left, center);
+  padding-top: rem(16);
+  margin-top: rem(16);
+  border-top: 1px var(--dark-blue-line) solid;
   .card-user {
     width: 12%;
     border: 1px var(--white) solid;
     border-radius: 50%;
     margin-right: rem(16);
-  }
-  .profile {
-    color: var(--white);
-    transition: all 0.2s ease-in;
-
-    &:hover {
-      color: var(--cyan);
-      cursor: pointer;
-    }
   }
 }
 
@@ -100,7 +97,7 @@
     margin: rem(22) auto rem(16);
   }
   .card {
-    width: rem(350);
+    max-width: rem(350);
     .card-title {
       margin-bottom: rem(18);
     }
@@ -118,7 +115,6 @@
 
   .card-footer {
     margin-bottom: rem(10);
-
     .card-user {
       width: 11%;
     }

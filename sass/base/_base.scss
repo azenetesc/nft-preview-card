@@ -13,12 +13,12 @@ body {
   background-color: var(--dark-blue-bg);
 }
 
-hr {
-  margin: rem(16) auto;
-  border: none;
-  height: 1px;
-  background-color: var(--dark-blue-line);
-}
+// hr {
+//   // margin: rem(16) auto;
+//   // border: none;
+//   // height: 1px;
+//   // background-color: var(--dark-blue-line);
+// }
 
 .container {
   @include flex-row(center, center);

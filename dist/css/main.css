@@ -24,7 +24,7 @@ body {
   color: var(--soft-blue);
   font-weight: var(--fw-light);
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 24;
 }
 .card-body .card-data .data-eth {
   color: var(--cyan);
@@ -44,13 +44,6 @@ body {
   background-color: var(--dark-blue-bg);
 }
 
-hr {
-  margin: 1rem auto;
-  border: none;
-  height: 1px;
-  background-color: var(--dark-blue-line);
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -62,7 +55,7 @@ hr {
   background-color: var(--dark-blue-card-bg);
   border-radius: 15px;
   padding: 1.5rem;
-  width: 20.4375rem;
+  max-width: 20.4375rem;
   box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.111);
 }
 
@@ -70,45 +63,46 @@ hr {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+}
+.card-img-container .card-link {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
-.card-img-container::before {
+.card-img-container .card-link::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  content: "";
+  content: url("../../images/icon-view.svg");
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: all 0.3s ease-in;
-}
-.card-img-container:hover::before {
   background-color: rgba(0, 255, 255, 0.234);
-}
-.card-img-container:hover .card-img-icon {
-  opacity: 1;
-}
-.card-img-container .card-img-icon {
-  position: absolute;
   transition: all 0.3s ease-in;
   opacity: 0;
 }
-.card-img-container .card-img-nft {
+.card-img-container .card-link:hover::before {
+  opacity: 1;
+}
+.card-img-container .card-link .card-img-nft {
   width: 100%;
 }
 
 .card-body {
   margin-top: 1.5rem;
 }
-.card-body .card-title {
+.card-body .text-links {
+  text-decoration: none;
   color: var(--white);
-  margin-bottom: 0.9375rem;
-  transition: all 0.3s ease-in;
+  transition: all 0.4s ease;
 }
-.card-body .card-title:hover {
+.card-body .text-links .card-title {
+  display: inline-block;
+  margin-bottom: 0.9375rem;
+}
+.card-body .text-links:hover {
   color: var(--cyan);
-  cursor: pointer;
 }
 .card-body .card-data {
   display: flex;
@@ -137,20 +131,15 @@ hr {
   display: flex;
   justify-content: left;
   align-items: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px var(--dark-blue-line) solid;
 }
 .card-footer .card-user {
   width: 12%;
   border: 1px var(--white) solid;
   border-radius: 50%;
   margin-right: 1rem;
-}
-.card-footer .profile {
-  color: var(--white);
-  transition: all 0.2s ease-in;
-}
-.card-footer .profile:hover {
-  color: var(--cyan);
-  cursor: pointer;
 }
 
 .attribution {
@@ -167,7 +156,7 @@ hr {
   }
 
   .card {
-    width: 21.875rem;
+    max-width: 21.875rem;
   }
   .card .card-title {
     margin-bottom: 1.125rem;
